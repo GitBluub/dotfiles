@@ -11,6 +11,7 @@ font pango:Inconsolota Nerd Font 8
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
+exec_always --no-startup-id blueman-applet
 exec_always --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
@@ -208,18 +209,16 @@ gaps inner 5
 #gaps outer 10
 gaps top 35
 exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id dunst
 exec_always --no-startup-id picom -Gb --experimental-backends --config /home/bluub/.config/picom/default
-exec_always --no-startup-id killall cbatticon
-
+exec_always --no-startup-id cbatticon
 
 #kitti3
-exec --no-startup-id kitti3 -p CT -s 0.6 0.4
+exec-always --no-startup-id kitti3 -p CT -s 0.6 0.4
 bindsym $mod+n nop kitti3
 
 assign [class="Code"] $ws3
 assign [class="Spotify"] &ws4
 
-exec-always --no-startup-id dunst
-exec-always --no-startup-id cbatticon
 
 # exec --no-startup-id i3-msg 'workspace 5; exec --no-startup-id spotify'
