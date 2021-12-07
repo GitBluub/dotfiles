@@ -172,7 +172,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #exec --no-startup-id xss-lock -- i3lock
 #xautolock setup
 
-exec --no-startup-id betterlockscreen -w dim
+exec --no-startup-id betterlockscreen -u ~/wallpapers -w dim 
 #lock the screen
 bindsym $mod+Shift+o exec betterlockscreen -l dim
 #bindsym $mod+Shift+o exec --no-startup-id "/home/bluub/.config/polybar/scripts/lock.sh"
