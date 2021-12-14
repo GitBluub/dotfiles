@@ -161,7 +161,7 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-bindsym $mod+i mode "resize"
+bindsym $mod+r mode "resize"
 
 #hide edge borders on the side
 hide_edge_borders vertical
