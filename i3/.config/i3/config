@@ -179,6 +179,8 @@ bindsym $mod+Shift+o exec betterlockscreen -l dim
 #bindsym $mod+Shift+o exec "/usr/bin/xautolock -locknow"
 #exec_always /usr/bin/xautolock -detectsleep -time 3 -locker "scrot /tmp/screenshot.png && convert /tmp/screenshot.png -blur 0x5 /tmp/screenshotblur.png && i3lock -u -i /tmp/screenshotblur.png  -e -f"
 
+bindsym $mod+T exec rofi -modi TODO:/home/bluub/my_scripts/rofi-todo.sh -show TODO
+
 # >>> Plasma Integration <<<
 
 # Try to kill the wallpaper set by Plasma (it takes up the entire workspace
