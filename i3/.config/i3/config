@@ -21,6 +21,10 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+# Alternating layout for i3
+# downloaded from https://github.com/olemartinorg/i3-alternating-layout
+exec --no-startup-id alternating_layouts.py
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -209,7 +213,7 @@ for_window [window_type="dialog"] floating enable
 for_window [class=".*"] border pixel 0
 gaps inner 5
 #gaps outer 10
-gaps top 35
+gaps top 30
 #kitti3
 exec_always --no-startup-id kitti3 -p CT -s 0.6 0.4
 bindsym $mod+n nop kitti3
