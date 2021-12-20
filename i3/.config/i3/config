@@ -35,7 +35,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+a kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec ~/.config/rofi/launchers/launcher.sh
+bindsym $mod+d exec ~/.config/rofi/bin/launcher_text
 
 # change focus
 bindsym $mod+j focus left
