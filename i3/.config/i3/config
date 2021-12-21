@@ -23,7 +23,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # Alternating layout for i3
 # downloaded from https://github.com/olemartinorg/i3-alternating-layout
-exec --no-startup-id alternating_layouts.py
+exec --no-startup-id /usr/bin/alternating_layouts.py
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -221,8 +221,9 @@ bindsym $mod+n nop kitti3
 exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id dunst
 exec_always --no-startup-id picom -Gb --experimental-backends --config /home/bluub/.config/picom/default
-exec_always --no-startup-id cbatticon
 
+exec_always --no-startup-id killall cbatticon
+exec_always --no-startup-id cbatticon
 assign [class="Code"] $ws3
 assign [class="Spotify"] &ws4
 
