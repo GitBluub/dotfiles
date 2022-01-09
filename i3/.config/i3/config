@@ -176,9 +176,15 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #exec --no-startup-id xss-lock -- i3lock
 #xautolock setup
 
-exec --no-startup-id betterlockscreen -u ~/wallpapers -w dim 
-#lock the screen
+# set the background with betterlockscreen
+# exec --no-startup-id betterlockscreen -u ~/wallpapers -w dim 
+# set the background with feh
+exec_always --no-startup-id feh --bg-fill ~/dotfiles/wallpapers -r -z
+# update lockscreen background
+# exec --no-startup-id betterlockscreen -u ~/wallpapers/celeste.png
+# KEYBIND lock the screen
 bindsym $mod+Shift+o exec betterlockscreen -l dim
+
 #bindsym $mod+Shift+o exec --no-startup-id "/home/bluub/.config/polybar/scripts/lock.sh"
 #bindsym $mod+Shift+o exec "/usr/bin/xautolock -locknow"
 #exec_always /usr/bin/xautolock -detectsleep -time 3 -locker "scrot /tmp/screenshot.png && convert /tmp/screenshot.png -blur 0x5 /tmp/screenshotblur.png && i3lock -u -i /tmp/screenshotblur.png  -e -f"
