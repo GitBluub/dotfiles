@@ -1,4 +1,7 @@
+stow
+picom
 feh
+starship
 bat
 dunst
 exa
