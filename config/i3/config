@@ -4,10 +4,14 @@
 
 # mod as windows button
 set $mod Mod4
-
+bindsym XF86MonBrightnessUp exec brightnessctl set 20%+ 
+bindsym XF86MonBrightnessDown exec brightnessctl set 20%- 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:Inconsolota Nerd Font 8
+
+# swap escape and capslock
+exec --no-startup-id setxkbmap -option caps:swapescape
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -87,8 +91,8 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-# Open firefox
-bindsym $mod+p exec firefox
+# Open browser
+bindsym $mod+p exec google-chrome-stable
 
 # Take a screenshot
 bindsym --release $mod+x exec --no-startup-id import /tmp/latest-screenshot.png

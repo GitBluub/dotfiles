@@ -100,7 +100,7 @@ return packer.startup(function(use)
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
   use 'goolord/alpha-nvim'
-
+  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
   use 'nishigori/increment-activator'
   -- Put this at the end after all plugins
   -- Automatically set up your configuration after cloning packer.nvim

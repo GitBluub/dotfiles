@@ -2,7 +2,7 @@
 
 set -gx VISUAL "nvim"
 set -gx EDITOR "nvim"
-set NPM_PACKAGES "$HOME/.npm-packages"
+set NPM_PACKAGES "$HOME/.npm-global"
 set PATH $PATH $NPM_PACKAGES/bin
 set PATH $PATH "$HOME/bin"
 set PATH $PATH "$HOME/.config/rofi/bin"
