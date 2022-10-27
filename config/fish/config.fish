@@ -23,7 +23,16 @@ set  XMODIFIERS "@im=fcitx"
 set  GLFW_IM_MODULE "ibus"
 
 alias k "kubectl"
+
 alias g "git"
+alias gs "git status"
+alias gc "git commit"
+alias gco "git checkout"
+alias ga "git add"
+alias gp "git push"
+
+alias c "cargo"
+
 alias vim "nvim"
 alias n "nvim"
 alias v "nvim"
