@@ -212,6 +212,9 @@ bindsym $mod+t exec rofi -modi TODO:/home/bluub/bin/rofi-todo.sh -show TODO
 
 # >>> Window Rules <<<
 
+# Cringe zoom
+for_window [title="^zoom$"] floating enable
+
 # >>> Avoid tiling for non-Plasma stuff <<<
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
