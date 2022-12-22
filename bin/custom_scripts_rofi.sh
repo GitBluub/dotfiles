@@ -1,7 +1,7 @@
 #!/bin/bash
 
-network='Reload network'
-translate='Translate clipboard'
+network='reload network'
+translate='translate clipboard'
 # Pass variables to rofi dmenu
 run_rofi() {
 	echo -e "$network\n$translate\n" | rofi -dmenu 
