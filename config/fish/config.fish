@@ -38,5 +38,6 @@ alias n "nvim"
 alias v "nvim"
 alias ionised 'fish -c "nmcli device wifi connect D8:54:A2:01:05:24 &> /dev/null &"'
 alias icat "kitty +kitten icat"
+source ~/.config/fish/secrets.fish
 starship init fish | source
 
