@@ -1,8 +1,4 @@
-local status_ok, wk = pcall(require, "which-key")
-if not status_ok then
-	return
-end
-
+wk = require("which-key")
 vim.opt["timeoutlen"] = 500
 
 wk.setup({
@@ -50,10 +46,33 @@ wk.register({
 })
 
 wk.register({
+	as = { "Toggle auto save" },
+	a = { "Automatic settings" }
+}, {
+	prefix = "<leader>"
+})
+
+wk.register({
 	y = { "Yank to system clipboard" },
 	Y = { "Yank line to system clipboard" },
 	p = { "Past from system clipboard" },
 	P = { "Past line from system clipboard" },
 }, {
 	prefix = "<leader>"
+})
+--lsp
+wk.register({
+	["<leader>"] = {
+		["v"] = {
+			["ws"] = "workspace symbols",
+			["d"] = "diagnostic"
+		}
+	},
+	g = {
+		--"go",
+		D = "Go to declaration",
+		d = "Go to definition",
+		I = "Go to implementation",
+		r = "Go to references"
+	}
 })

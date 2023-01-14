@@ -2,6 +2,7 @@ local fn = vim.fn
 
 -- Automatically install packer
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
+
 if fn.empty(fn.glob(install_path)) > 0 then
   PACKER_BOOTSTRAP = fn.system {
     "git",
@@ -14,20 +15,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
   print "Installing packer close and reopen Neovim..."
   vim.cmd [[packadd packer.nvim]]
 end
-
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd [[
-augroup packer_user_config
-autocmd!
-autocmd BufWritePost plugins.lua source <afile> | PackerSync
-augroup end
-]]
-
--- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-  return
-end
+local packer = require("packer")
 
 -- Have packer use a popup window
 packer.init {
@@ -52,29 +40,55 @@ packer.startup(function(use)
   use "tpope/vim-sleuth"
   use "nishigori/increment-activator"
 
+  use "theprimeagen/harpoon"
 
   use { "AckslD/nvim-gfold.lua" }
-  use { "airblade/vim-rooter", config = function() vim.g.rooter_manual_only = 1 end }
-  -- use { "yyk/simply-auto-save.nvim", branch = "check-valid-buf", config = function() require "auto-save".setup({ write_all_buffers = true }) end }
+  use { "airblade/vim-rooter" }
+  use({
+    "Pocco81/auto-save.nvim",
+    config = function()
+      require("auto-save").setup {
+        -- your config goes here
+        -- or just leave it empty :)
+      }
+    end,
+  })
   -- Colorschemes
   use "folke/tokyonight.nvim"
-  use "catppuccin/nvim"
+  use {"catppuccin/nvim", config = function()
+    vim.cmd('colorscheme catppuccin')
+  end}
+  use {
+    'VonHeikemen/lsp-zero.nvim',
+    requires = {
+      -- LSP Support
+      {'neovim/nvim-lspconfig'},
+      {'williamboman/mason.nvim'},
+      {'williamboman/mason-lspconfig.nvim'},
 
-  -- LSP
- use { "williamboman/mason.nvim" }
- use {
-    'neovim/nvim-lspconfig',
-    'williamboman/mason.nvim',
-    -- 'williamboman/nvim-lsp-installer',
+      -- Autocompletion
+      {'hrsh7th/nvim-cmp'},
+      {'hrsh7th/cmp-buffer'},
+      {'hrsh7th/cmp-path'},
+      {"hrsh7th/cmp-cmdline"},
+      {'saadparwaiz1/cmp_luasnip'},
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'hrsh7th/cmp-nvim-lua'},
+
+      -- Snippets
+      {'L3MON4D3/LuaSnip'},
+      {'rafamadriz/friendly-snippets'},
+    }
   }
-
-  -- Autocomplete
-  use "L3MON4D3/LuaSnip"
-  use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/nvim-cmp"
-  use "hrsh7th/cmp-buffer"
-  use "hrsh7th/cmp-path"
-  use "hrsh7th/cmp-cmdline"
+  use {
+    "zbirenbaum/copilot.lua",
+    event = "VimEnter",
+    config = function()
+      vim.defer_fn(function()
+        require("copilot").setup()
+      end, 100)
+    end,
+  }
 
   -- Treesitter
   use {
@@ -103,6 +117,5 @@ packer.startup(function(use)
   use 'kyazdani42/nvim-tree.lua'
   use "petertriho/nvim-scrollbar"
   use { "j-hui/fidget.nvim", config = function() require("fidget").setup {} end }
+  use "folke/zen-mode.nvim"
 end)
-
-vim.cmd "colorscheme catppuccin"

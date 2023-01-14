@@ -1,12 +1,3 @@
-require "options"
-require "keymaps"
-require "plugins"
-require "lsp.mason"
-require "lsp.signature"
-require "autocomplete"
-require "treesitter"
-require "telescope_opts"
-require "nvimtree"
-require "options.scrollbar"
-require "options.gfold"
-require "whichkey"
+require("bluub.packer")
+require("bluub.remap")
+require("bluub.set")
