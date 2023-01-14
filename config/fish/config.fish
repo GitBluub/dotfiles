@@ -24,6 +24,8 @@ set  GLFW_IM_MODULE "ibus"
 
 alias k "kubectl"
 
+alias t "tmux"
+
 alias g "git"
 alias gs "git status"
 alias gc "git commit"
