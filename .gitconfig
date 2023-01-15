@@ -1,0 +1,7 @@
+[user]
+	email = louis.auzuret@gmail.com
+	name = GitBluub
+[pull]
+	rebase = true
+[push]
+	autoSetupRemote = true
