@@ -1,8 +1,8 @@
 add_newline = false
 
 [character]
-success_symbol = "[➜](bold green)"
-error_symbol = "[➜](red)"
+success_symbol = " [➜](bold green)"
+error_symbol = " [➜](red)"
 
 [aws]
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
@@ -30,6 +30,9 @@ format = '\[[$symbol($version)]($style)\]'
 
 [docker_context]
 format = '\[[$symbol$context]($style)\]'
+
+[directory]
+format = ' [$path]($style)[$read_only]($read_only_style) '
 
 [dotnet]
 format = '\[[$symbol($version)(🎯 $tfm)]($style)\]'
