@@ -5,3 +5,5 @@
 	rebase = true
 [push]
 	autoSetupRemote = true
+[protocol "file"]
+	allow = always

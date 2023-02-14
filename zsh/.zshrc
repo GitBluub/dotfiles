@@ -15,6 +15,7 @@ export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 export VISUAL="nvim"
 export EDITOR="nvim"
 export NPM_PACKAGES="$HOME/.npm-global"
+export XDG_CACHE_HOME="$HOME/.cache"
 path+=$NPM_PACKAGES/bin
 path+=$HOME/bin
 path+=$HOME/.config/rofi/bin
