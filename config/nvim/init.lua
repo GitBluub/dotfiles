@@ -1,3 +1,2 @@
-require("bluub.packer")
-require("bluub.remap")
-require("bluub.set")
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
