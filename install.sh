@@ -10,3 +10,6 @@ ln -s $HOME/dotfiles/.gitconfig $HOME/.gitconfig
 
 # fish
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+
+# for gnome
+# dconf load / < gnome-settings.ini

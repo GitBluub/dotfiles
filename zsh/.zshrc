@@ -21,6 +21,7 @@ path+=$HOME/bin
 path+=$HOME/.config/rofi/bin
 path+=$HOME/.ghcup/bin
 path+=$HOME/.local/bin
+path+=$HOME/go/bin
 export PATH
 
 # Set name of the theme to load --- if set to "random", it will
