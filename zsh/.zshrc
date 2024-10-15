@@ -16,6 +16,7 @@ export VISUAL="nvim"
 export EDITOR="nvim"
 export NPM_PACKAGES="$HOME/.npm-global"
 export XDG_CACHE_HOME="$HOME/.cache"
+export TMUX_FZF_SESSION_FORMAT="#{session_windows} windows"
 path+=$NPM_PACKAGES/bin
 path+=$HOME/bin
 path+=$HOME/.config/rofi/bin
