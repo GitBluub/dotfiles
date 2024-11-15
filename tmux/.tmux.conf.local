@@ -411,12 +411,12 @@ set -g @resurrect-strategy-nvim 'session'
 set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @plugin 'sainnhe/tmux-fzf'
 set -g @plugin 'laktak/extrakto'
-set -g @plugin 'Morantron/tmux-fingers'
+#set -g @plugin 'Morantron/tmux-fingers'
 set -g @continuum-restore 'on'
 
 
 #bind-key "C-l" run-shell -b "/home/bluub/.tmux/plugins/tmux-fzf/scripts/session.sh attach"
-bind-key -r l run-shell  "tmux neww /home/bluub/bin/tt"
+bind-key -r l run-shell -b "tmux neww $HOME/bin/tt"
 
 # -- custom variables ----------------------------------------------------------
 

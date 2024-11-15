@@ -1,9 +1,12 @@
 [user]
 	email = louis.auzuret@gmail.com
 	name = GitBluub
+	signingkey = /Users/lauzuret/.ssh/id_ed25519.pub
 [pull]
 	rebase = true
 [push]
 	autoSetupRemote = true
 [protocol "file"]
 	allow = always
+[gpg]
+	format = ssh

@@ -17,12 +17,14 @@ export EDITOR="nvim"
 export NPM_PACKAGES="$HOME/.npm-global"
 export XDG_CACHE_HOME="$HOME/.cache"
 export TMUX_FZF_SESSION_FORMAT="#{session_windows} windows"
+path+=/opt/homebrew/bin
 path+=$NPM_PACKAGES/bin
 path+=$HOME/bin
 path+=$HOME/.config/rofi/bin
 path+=$HOME/.ghcup/bin
 path+=$HOME/.local/bin
 path+=$HOME/go/bin
+path+=${KREW_ROOT:-$HOME/.krew}/bin
 export PATH
 
 # Set name of the theme to load --- if set to "random", it will
