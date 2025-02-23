@@ -4,9 +4,22 @@
 	signingkey = /Users/lauzuret/.ssh/id_ed25519.pub
 [pull]
 	rebase = true
+  ff = true
 [push]
-	autoSetupRemote = true
+  autoSetupRemote = true
+  default = "upstream"
 [protocol "file"]
 	allow = always
 [gpg]
 	format = ssh
+[advice]
+    diverging = false
+[rebase]
+    autoSquash = true
+    autoStash = true
+    updateRefs = true
+
+[rerere]
+    enabled = true
+[branch]
+    sort = "-committerdate"
