@@ -417,6 +417,8 @@ set -g @continuum-restore 'on'
 
 #bind-key "C-l" run-shell -b "/home/bluub/.tmux/plugins/tmux-fzf/scripts/session.sh attach"
 bind-key -r l run-shell -b "tmux neww $HOME/bin/tt"
+bind-key -r k run-shell -b "tmux neww $HOME/bin/k"
+#bind-key -r t run-shell -b "tmux neww todo"
 
 # -- custom variables ----------------------------------------------------------
 

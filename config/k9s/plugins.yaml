@@ -1,4 +1,18 @@
 plugins:
+  arc_copy_url:
+    shortCut: Shift-C
+    scopes:
+      - ephemeralrunners
+    description: |
+      Copy workflow url
+    confirm: false
+    dangerous: false
+    command: sh
+    background: true
+    args:
+      - -c
+      - |
+        kubectl get $RESOURCE_NAME $NAME -n $NAMESPACE -o json | jq -r '"https://github.com/\(.status.jobRepositoryName)/actions/runs/\(.status.workflowRunId)"' | pbcopy
   remove_finalizers:
     shortCut: Ctrl-F
     confirm: true
@@ -6,8 +20,7 @@ plugins:
     scopes:
       - all
     description: |
-      Removes all finalizers from selected resource. Be careful when using it,
-      it may leave dangling resources or delete them
+      finalizers
     command: kubectl
     background: true
     args:

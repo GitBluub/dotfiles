@@ -134,6 +134,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias k="kubectl"
+alias kk="k9s -c ctx"
+export K9S_CONFIG_DIR=~/.config/k9s
 
 alias t="tmux"
 
@@ -151,5 +153,22 @@ alias n="nvim"
 alias v="nvim"
 alias ionised='fish -c "nmcli device wifi connect D8:54:A2:01:05:24 &> /dev/null &"'
 alias icat="kitty +kitten icat"
+
+setopt extendedglob                                             # Extended globbing. Allows using regular expressions with *
+setopt nocaseglob                                               # Case insensitive globbing
+setopt numericglobsort                                          # Sort filenames numerically when it makes sense
+# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
+# zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"       # Colored completion (different colors for dirs/files/etc)
+# zstyle ':completion:*' rehash true                              # automatically find new executables in path
+# # Speed up completions
+# zstyle ':completion:*' accept-exact '*(N)'
+# zstyle ':completion:*' use-cache on
+# mkdir -p "$(dirname ${config.xdg.cacheHome}/zsh/completion-cache)"
+# zstyle ':completion:*' cache-path "${config.xdg.cacheHome}/zsh/completion-cache"
+# zstyle ':completion:*' menu select
+# zstyle ':completion:*' matcher-list \'\' 'm:{a-zA-Z}={A-Za-z}'
+
+#autoload -Uz compinit && compinit
+
 
 eval "$(starship init zsh)"

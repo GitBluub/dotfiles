@@ -3,8 +3,9 @@
 -- Add any additional options here
 --
 --
+-- fuck cakebuild, all my homies hate cakebuild
 vim.filetype.add({
   extension = {
-    cake = "cake",
+    cake = "cs",
   },
 })
