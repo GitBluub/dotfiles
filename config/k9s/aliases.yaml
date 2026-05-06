@@ -6,4 +6,5 @@ aliases:
   crb: clusterrolebindings
   ro: roles
   rb: rolebindings
-  np: networkpolicies
+  np: ciliumnetworkpolicies
+  cnp: ciliumclusterwidenetworkpolicies

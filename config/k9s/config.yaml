@@ -6,12 +6,13 @@ k9s:
   readOnly: false
   noExitOnCtrlC: false
   ui:
-    enableMouse: false
+    enableMouse: true
+    skin: rose
     headless: false
-    logoless: false
-    crumbsless: false
-    reactive: false
-    noIcons: false
+    logoless: true
+    crumbsless: true
+    reactive: true
+    noIcons: true
     defaultsToFullScreen: false
   skipLatestRevCheck: false
   disablePodCounting: false

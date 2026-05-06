@@ -1,4 +1,19 @@
 plugins:
+  edit-secret:
+    shortCut: Ctrl-X
+    confirm: false
+    description: "Edit Decoded Secret"
+    scopes:
+      - secrets
+    command: kubectl
+    background: false
+    args:
+      - modify-secret
+      - --namespace
+      - $NAMESPACE
+      - --context
+      - $CONTEXT
+      - $NAME
   arc_copy_url:
     shortCut: Shift-C
     scopes:

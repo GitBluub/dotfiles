@@ -1,5 +1,7 @@
 
-theme = catppuccin-mocha
+theme = dark:Catppuccin Mocha,light:Flexoki Light
+
 keybind = global:cmd+o=toggle_quick_terminal
+shell-integration = zsh
 
 

@@ -137,6 +137,15 @@ alias k="kubectl"
 alias kk="k9s -c ctx"
 export K9S_CONFIG_DIR=~/.config/k9s
 
+# kubeconfig per session
+file="$(mktemp -t "kubectx.XXXXXX")"
+export KUBECONFIG="${file}:${KUBECONFIG}"
+cat <<EOF >"${file}"
+apiVersion: v1
+kind: Config
+current-context: ""
+EOF
+
 alias t="tmux"
 
 alias g="git"
@@ -157,18 +166,19 @@ alias icat="kitty +kitten icat"
 setopt extendedglob                                             # Extended globbing. Allows using regular expressions with *
 setopt nocaseglob                                               # Case insensitive globbing
 setopt numericglobsort                                          # Sort filenames numerically when it makes sense
-# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
-# zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"       # Colored completion (different colors for dirs/files/etc)
-# zstyle ':completion:*' rehash true                              # automatically find new executables in path
-# # Speed up completions
-# zstyle ':completion:*' accept-exact '*(N)'
-# zstyle ':completion:*' use-cache on
-# mkdir -p "$(dirname ${config.xdg.cacheHome}/zsh/completion-cache)"
-# zstyle ':completion:*' cache-path "${config.xdg.cacheHome}/zsh/completion-cache"
-# zstyle ':completion:*' menu select
-# zstyle ':completion:*' matcher-list \'\' 'm:{a-zA-Z}={A-Za-z}'
 
-#autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
+zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"       # Colored completion (different colors for dirs/files/etc)
+zstyle ':completion:*' rehash true                              # automatically find new executables in path
+# # Speed up completions
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+mkdir -p "$(dirname ${config.xdg.cacheHome}/zsh/completion-cache)"
+zstyle ':completion:*' cache-path "${config.xdg.cacheHome}/zsh/completion-cache"
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list \'\' 'm:{a-zA-Z}={A-Za-z}'
+
+autoload -Uz compinit && compinit
 
 
 eval "$(starship init zsh)"
