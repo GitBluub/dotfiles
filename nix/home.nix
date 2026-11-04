@@ -43,6 +43,22 @@
       gh
     ];
 
+  home.file =
+    let
+      link = path: { source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/${path}"; };
+    in
+    {
+      ".aerospace.toml" = link ".aerospace.toml";
+      ".gitconfig" = link ".gitconfig";
+      ".tmux.conf" = link "tmux/.tmux.conf";
+      ".tmux.conf.local" = link "tmux/.tmux.conf.local";
+      ".config/ghostty" = link "config/ghostty";
+      ".config/gh" = link "config/gh";
+      ".config/k9s" = link "config/k9s";
+      "bin/tt" = link "bin/tt";
+      "bin/youtube_gif.sh" = link "bin/youtube_gif.sh";
+    };
+
 
   programs.hunk = {
     enable = true;
@@ -248,7 +264,6 @@
       dc = "docker-compose";
       dcd = "docker-compose -f docker-compose.dev.yml";
       t = "tmux";
-      op = "xdg-open";
       n = "nvim";
       vim = "nvim";
       v = "nvim";
@@ -306,7 +321,7 @@ export TMUX_FZF_SESSION_FORMAT="#{session_windows} windows"
 path+=/opt/homebrew/bin
 path+=$NPM_PACKAGES/bin
 path+=$HOME/bin
-path+=$HOME/.config/rofi/bin
+path+=$HOME/.lmstudio/bin
 path+=$HOME/.ghcup/bin
 path+=$HOME/.local/bin
 path+=$HOME/go/bin

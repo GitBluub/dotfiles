@@ -248,6 +248,7 @@
         configuration
         home-manager.darwinModules.home-manager {
           home-manager.useGlobalPkgs = true;
+          home-manager.backupFileExtension = "hm-bak";
           home-manager.extraSpecialArgs = { inherit inputs; };
           home-manager.users.lauzuret = import ./home.nix;
           # home-manager.useUserPackages = true;
