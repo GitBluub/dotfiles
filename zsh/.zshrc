@@ -182,3 +182,8 @@ autoload -Uz compinit && compinit
 
 
 eval "$(starship init zsh)"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/lauzuret/.lmstudio/bin"
+# End of LM Studio CLI section
+

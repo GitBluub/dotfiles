@@ -43,3 +43,8 @@ alias icat "kitty +kitten icat"
 source ~/.config/fish/secrets.fish
 starship init fish | source
 
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /Users/lauzuret/.lmstudio/bin
+# End of LM Studio CLI section
+
