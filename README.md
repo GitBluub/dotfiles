@@ -1,21 +1,32 @@
 # Dotfiles
 
+macOS setup managed by [nix-darwin](https://github.com/nix-darwin/nix-darwin) + [home-manager](https://github.com/nix-community/home-manager). The old Linux (i3/polybar/rofi) setup is under the `linux-era` tag.
 
-## My i3wm configuration files
-| Program | Name |
+| | |
 | :--- | :--- |
-| Linux Distribution | [Manjaro](https://manjaro.org/) |
-| Window Manager | [i3-gaps](https://github.com/Airblader/i3) |
-| Bar | [polybar](https://github.com/jaagr/polybar) |
-| Program Launcher | [rofi](https://github.com/DaveDavenport/rofi) |
-| Shell | [fish](https://fishshell.com/) |
-| Terminal Emulator | [Kitty](https://github.com/kovidgoyal/kitty) |
-| Main Code Editor | [vscode](https://code.visualstudio.com/) |
-| Terminal Code Editor | [nvim](https://github.com/neovim/neovim) |
-| Music Player | [Spotify](https://www.spotify.com)
+| Window manager | [AeroSpace](https://github.com/nikitabobko/AeroSpace) |
+| Terminal | [Ghostty](https://ghostty.org) + tmux ([Oh my tmux!](https://github.com/gpakosz/.tmux)) |
+| Shell | zsh + starship |
+| Editor | nvim ([lazyvim-nix](https://github.com/pfassina/lazyvim-nix)) |
 
-## Polybar && Rofi
+## Layout
 
-My polybar config is based on [adi1090 polybar themes](https://github.com/adi1090x/polybar-themes)
-You should probably go from this repository and customize it to fit your needs
-Same goes for my rofi config based on [adi1090 rofi themes](https://github.com/adi1090x/rofi)
+- `nix/`: flake (`flake.nix` system, `home.nix` user, `lazyvim.nix`)
+- everything else: plain config files, linked into `$HOME` by `home.file` in `home.nix` with `mkOutOfStoreSymlink`. Edits apply live, no rebuild.
+
+The repo must be cloned at `~/dotfiles`, the links point there.
+
+## Bootstrap
+
+```sh
+git clone git@github.com:GitBluub/dotfiles.git ~/dotfiles
+# install Nix: https://nixos.org/download
+sudo nix run nix-darwin -- switch --flake ~/dotfiles/nix
+```
+
+## Update
+
+```sh
+sudo darwin-rebuild switch --flake ~/dotfiles/nix
+nix flake update --flake ~/dotfiles/nix   # bump inputs
+```

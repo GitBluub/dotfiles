@@ -368,6 +368,17 @@ set -g mouse on
 #set -g status-position top
 
 
+# -- hooked sidebar ------------------------------------------------------------
+# tmux sidebar for hooked sessions (~/Lucca/hooked/tmux). Toggle: prefix + g.
+# (h/H/j/k/l are taken by Oh-my-tmux pane nav/resize; g is free.)
+set -g @hooked-sidebar-key   'g'
+set -g @hooked-sidebar-width '40'
+set -g @hooked-port          '4123'
+set -g @hooked-node          '/Users/lauzuret/.local/share/mise/installs/node/24/bin/node'
+# guarded so it no-ops until the branch is merged and the files exist on main
+if-shell 'test -f ~/Lucca/hooked/tmux/hooked.tmux' "run-shell '~/Lucca/hooked/tmux/hooked.tmux'"
+
+
 # -- tpm -----------------------------------------------------------------------
 
 # while I don't use tpm myself, many people requested official support so here
